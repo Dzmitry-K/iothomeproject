@@ -28,10 +28,6 @@ public class SensorRepository {
                 .get(Sensor.class, id);
     }
 
-    public Sensor findSensorBySerialNumber(String sn) {
-        return sessionFactory.getCurrentSession()
-                .get(Sensor.class, sn);
-    }
 
 
     public List<Sensor> findSensorsBySerialNumber(String sn) {
