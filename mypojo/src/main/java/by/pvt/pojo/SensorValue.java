@@ -54,13 +54,4 @@ public class SensorValue implements Serializable {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return "SensorValue{" +
-                "id=" + id +
-                ", sensor=" + sensor +
-                ", date=" + date +
-                ", value=" + value +
-                '}';
-    }
 }

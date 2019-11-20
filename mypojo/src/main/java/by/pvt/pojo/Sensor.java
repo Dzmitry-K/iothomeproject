@@ -37,11 +37,4 @@ public class Sensor implements Serializable {
         this.serialnumber = serialnumber;
     }
 
-    @Override
-    public String toString() {
-        return "Sensor{" +
-                "id=" + id +
-                ", serialnumber='" + serialnumber + '\'' +
-                '}';
-    }
 }
