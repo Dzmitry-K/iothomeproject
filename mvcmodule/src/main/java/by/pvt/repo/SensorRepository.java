@@ -19,7 +19,7 @@ public class SensorRepository {
     public List<Sensor> findSensors() {
         log.info("Call findSensors()");
         return sessionFactory.getCurrentSession()
-                .createQuery("from sensor", Sensor.class)
+                .createQuery("from Sensor", Sensor.class)
                 .list();
     }
 
@@ -33,7 +33,7 @@ public class SensorRepository {
     public List<Sensor> findSensorsBySerialNumber(String sn) {
         log.info("Call findSensorBySerialNumber()");
         return sessionFactory.getCurrentSession()
-                .createQuery("from sensor s where s.serialnumber like :param1", Sensor.class)
+                .createQuery("from Sensor s where s.serialnumber like :param1", Sensor.class)
                 .setParameter("param1", "%" + sn + "%")
                 .list();
     }

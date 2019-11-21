@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 
-@Entity(name = "sensor")
+@Entity
+@Table(name = "sensor")
 public class Sensor implements Serializable {
 
     @Id

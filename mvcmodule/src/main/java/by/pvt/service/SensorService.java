@@ -1,6 +1,5 @@
 package by.pvt.service;
 
-import by.pvt.pojo.Sensor;
 import by.pvt.pojo.SensorValue;
 import by.pvt.repo.SensorRepository;
 import by.pvt.repo.SensorValueRepository;

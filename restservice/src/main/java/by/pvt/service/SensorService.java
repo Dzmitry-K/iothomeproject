@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class SensorService {
         Double value = sensorDto.getValue();
         if(sensorRepository.findBySerialnumber(serialNumber).isPresent()){
             Sensor sensor = sensorRepository.findBySerialnumber(serialNumber).get();
-            SensorValue sensorValue = new SensorValue(sensor, LocalDateTime.now(), value);
+            SensorValue sensorValue = new SensorValue(sensor, value);
             sensorValueRepository.save(sensorValue);
         }
     }

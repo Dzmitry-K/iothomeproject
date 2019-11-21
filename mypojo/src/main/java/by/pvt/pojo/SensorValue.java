@@ -1,11 +1,15 @@
 package by.pvt.pojo;
 
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity(name = "sensor_value")
+@Entity
+@Table(name = "sensorvalue")
 public class SensorValue implements Serializable {
 
     @Id
@@ -13,13 +17,21 @@ public class SensorValue implements Serializable {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sensorid")
     private Sensor sensor;
 
+    @CreationTimestamp
     private LocalDateTime date;
 
     private Double value;
 
+    public LocalDateTime getDate() {
+        return date;
+    }
 
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
     public Sensor getSensor() {
         return sensor;
@@ -29,13 +41,6 @@ public class SensorValue implements Serializable {
         this.sensor = sensor;
     }
 
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
 
     public Double getValue() {
         return value;
@@ -48,9 +53,8 @@ public class SensorValue implements Serializable {
     public SensorValue() {
     }
 
-    public SensorValue(Sensor sensor, LocalDateTime date, Double value) {
+    public SensorValue(Sensor sensor, Double value) {
         this.sensor = sensor;
-        this.date = date;
         this.value = value;
     }
 

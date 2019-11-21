@@ -19,11 +19,8 @@ public class SensorValueRepository {
     public List<SensorValue> findValuesBySensorId(Long id) {
         log.info("Call findValuesBySensorId()");
         return sessionFactory.getCurrentSession()
-                .createQuery("from sensor_value s where s.sensor_id like :param1", SensorValue.class)
+                .createQuery("from SensorValue where sensorid like :param1", SensorValue.class)
                 .setParameter("param1", "%" + id + "%")
                 .list();
     }
-
-
-
 }
