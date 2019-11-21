@@ -1,6 +1,5 @@
 package by.pvt.repo;
 
-import by.pvt.pojo.Sensor;
 import by.pvt.pojo.SensorValue;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class SensorValueRepository {
         log.info("Call findValuesBySensorId()");
         return sessionFactory.getCurrentSession()
                 .createQuery("from SensorValue where sensor.id = :param1", SensorValue.class)
-                .setParameter("param1", "%" + id + "%")
+                .setParameter("param1", id)
                 .list();
     }
 }
