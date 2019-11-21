@@ -17,7 +17,7 @@ public class SensorValue implements Serializable {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sensorid")
+//    @JoinColumn(name = "sensorid")
     private Sensor sensor;
 
     @CreationTimestamp
