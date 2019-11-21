@@ -16,15 +16,11 @@ public class SensorValueRepository {
     @Autowired
     SessionFactory sessionFactory;
 
-    @Autowired
-    SensorRepository sensorRepository;
-
-
-    public List<SensorValue> findValuesBySensorId(Long id) {
-        log.info("Call findValuesBySensorId()");
+    public List<SensorValue> findValuesBySerialNumber(String sn) {
+        log.info("Call findValuesBySensorSerialNumber()");
         return sessionFactory.getCurrentSession()
-                .createQuery("from SensorValue where sensor.id = :param1", SensorValue.class)
-                .setParameter("param1", id)
+                .createQuery("from SensorValue s where s.sensor.serialnumber like :param1", SensorValue.class)
+                .setParameter("param1", "%" + sn + "%")
                 .list();
     }
 }

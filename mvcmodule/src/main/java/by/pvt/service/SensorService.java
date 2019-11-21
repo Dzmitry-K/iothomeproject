@@ -22,7 +22,6 @@ public class SensorService {
 
     @Transactional
     public List<SensorValue> searchValueBySerialNumber(String sn){
-        Long id = sensorRepository.findSensorsBySerialNumber(sn).get(0).getId();
-        return sensorValueRepository.findValuesBySensorId(id);
+        return sensorValueRepository.findValuesBySerialNumber(sn);
     }
 }
