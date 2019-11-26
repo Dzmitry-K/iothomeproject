@@ -9,10 +9,10 @@
   </tr>
   </thead>
   <tbody>
-  <c:forEach var="item" items="${items}">
+  <c:forEach var="item" items="${item}">
     <tr>
-      <td>${item.date}</td>
-      <td>${item.value}</td>
+      <td>${item.getDate()}</td>
+      <td>${item.getValue()}</td>
     </tr>
   </c:forEach>
   </tbody>
