@@ -20,8 +20,8 @@ public class SensorController {
 
     @GetMapping("/{sn}")
     public String showProductItem(@PathVariable String sn, Model model) {
-        List<SensorValue> item = sensorService.searchValueBySerialNumber(sn);
-        model.addAttribute("item", item);
+        List<SensorValue> items = sensorService.searchValueBySerialNumber(sn);
+        model.addAttribute("items", items);
         return "sensorPage";
     }
 }
